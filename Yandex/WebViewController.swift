@@ -17,6 +17,7 @@ class WebViewController: UIViewController,WKNavigationDelegate {
     
     
         override func viewDidLoad() {
+            self.navigationController?.navigationBar.isHidden = true
             searchTf.text = loadUrl
             super.viewDidLoad()
            let url = URL(string: loadUrl)!
@@ -32,5 +33,8 @@ class WebViewController: UIViewController,WKNavigationDelegate {
                    webView.allowsBackForwardNavigationGestures = true
         
     
+    }
+    @IBAction func leftAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
